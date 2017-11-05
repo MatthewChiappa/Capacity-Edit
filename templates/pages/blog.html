@@ -6,9 +6,12 @@ blog:
     summary: 400
 ---
 
+
 {{#partial "page"}}
 
 <div class="content">
+    
+    <h1 class="blog-title">Regina's Blog</h1>
   <div class="blog-index">
     {{#each blog.posts}}
       {{> components/blog/blog-item post=this settings=../theme_settings}}

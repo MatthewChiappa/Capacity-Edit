@@ -1,3 +1,5 @@
+<div style="position: absolute; top: 10%; left: 2%; opacity: 0.8;" ><img src="https://www.reginascatholicgifts.com/product_images/uploaded_images/badge-2.png"></div>
+
 <footer class="main-footer{{#if theme_settings.move_social_icons}} social-icons-first{{/if}}">
 
   <div class="footer-site-subscribe site-footer-item">
@@ -30,31 +32,49 @@
   <div class="footer-bottom-row">
 
     <div class="footer-payment-icons">
+      <!--<ul class="footer-payment-icons-list" style="display: block;padding-right: 14%;">-->
+      <!--  {{#if theme_settings.payment_visa}}-->
+      <!--    <li><div class="footer-payment-icon"><img src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/visa.png"></div></li>-->
+      <!--  {{/if}}-->
+
+      <!--  {{#if theme_settings.payment_mastercard}}-->
+      <!--    <li><div class="footer-payment-icon"><img src="https://www.reginascatholicgifts.com/product_images/uploaded_images/mastercard.png"></div></li>-->
+      <!--  {{/if}}-->
+
+      <!--  {{#if theme_settings.payment_american_express}}-->
+      <!--    <li><div class="footer-payment-icon"><img src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/amex.png"></div></li>-->
+      <!--  {{/if}}-->
+      <!--</ul>-->
+
+
       <ul class="footer-payment-icons-list">
-        {{#if theme_settings.payment_visa}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-visa"></svg></li>
-        {{/if}}
+        <!--{{#if theme_settings.payment_discover}}-->
+        <!--  <li><div class="footer-payment-icon"><img src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/discover.png"></div></li>-->
+        <!--{{/if}}-->
 
-        {{#if theme_settings.payment_mastercard}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-mastercard"></svg></li>
-        {{/if}}
-
-        {{#if theme_settings.payment_american_express}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-american-express"></svg></li>
-        {{/if}}
-
-        {{#if theme_settings.payment_discover}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-discover"></svg></li>
-        {{/if}}
-
-        {{#if theme_settings.payment_paypal}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-paypal"></svg></li>
-        {{/if}}
-
-        {{#if theme_settings.payment_apple_pay}}
-          <li><svg class="footer-payment-icon"><use xlink:href="#icon-apple-pay"></svg></li>
-        {{/if}}
+        <!--{{#if theme_settings.payment_apple_pay}}-->
+        <!--  <li><div class="footer-payment-icon"><img src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/apple-pay.png"></div></li>-->
+        <!--{{/if}}-->
+        
+        <!--{{#if theme_settings.payment_paypal}}-->
+        <!--  <li><div class="footer-payment-icon"><img style="zoom: 0.9;"src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/paypal.png"></div></li>-->
+        <!--{{/if}}-->
+        
+        <!-- PayPal Logo -->
+        <li><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a>
+            <div class="footer-payment-icon" style="zoom: 0.4"><img src="//cdn2.bigcommerce.com/server1000/r8n9s/product_images/uploaded_images/applepay.png"></div>
+        </li>
+            <li style="padding-left: 10px; float: right; padding-top: 10px; opacity: 0.6;"><script language="javascript" type="text/javascript" src="//smarticon.geotrust.com/si.js"></script></li>
+        <!-- PayPal Logo -->
       </ul>
+      <ul class="footer-payment-icons-list">
+          <!-- webbot  bot="HTMLMarkup" startspan -->
+            <!-- GeoTrust QuickSSL [tm] Smart  Icon tag. Do not edit. -->
+            
+            <!-- end  GeoTrust Smart Icon tag -->
+            <!-- webbot  bot="HTMLMarkup" endspan -->
+      </ul>
+      
     </div>
 
     <nav class="footer-accounts">

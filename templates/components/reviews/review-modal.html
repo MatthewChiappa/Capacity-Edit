@@ -25,10 +25,14 @@
         {{/if}}
 
         {{!-- Clickable Stars --}}
-        <div class="form-field">
-          <span class="form-field-title">{{lang 'product.reviews.rating_label'}}</span>
+        <div class="form-field form-field-common form-field-radio form-required">
+          <span class="form-field-title">
+            {{lang 'product.reviews.rating_label'}}
+            <span class="required-text">{{lang 'common.required'}}</span>
+          </span>
+
           <fieldset class="input-stars form-fieldset">
-            <input type="radio" id="stars-5" class="show-for-sr" name="revrating" value="5">
+            <input type="radio" id="stars-5" class="form-input form-radio show-for-sr" name="revrating" value="5" required aria-required="true">
             <label for="stars-5" class="star" title="{{lang 'product.reviews.stars_count' NUM=5}}">
               <svg class="star star-full">
                 <use xlink:href="#icon-star"></use>
@@ -38,7 +42,7 @@
               </svg>
               <span class="span show-for-sr">{{lang 'product.reviews.stars_count' NUM=5}}</span>
             </label>
-            <input type="radio" id="stars-4" class="show-for-sr" name="revrating" value="4">
+            <input type="radio" id="stars-4" class="form-input form-radio show-for-sr" name="revrating" value="4" required aria-required="true">
             <label for="stars-4" class="star" title="{{lang 'product.reviews.stars_count' NUM=4}}">
               <svg class="star star-full">
                 <use xlink:href="#icon-star"></use>
@@ -48,7 +52,7 @@
               </svg>
               <span class="span show-for-sr">{{lang 'product.reviews.stars_count' NUM=4}}</span>
             </label>
-            <input type="radio" id="stars-3" class="show-for-sr" name="revrating" value="3">
+            <input type="radio" id="stars-3" class="form-input form-radio show-for-sr" name="revrating" value="3" required aria-required="true">
             <label for="stars-3" class="star" title="{{lang 'product.reviews.stars_count' NUM=3}}">
               <svg class="star star-full">
                 <use xlink:href="#icon-star"></use>
@@ -58,7 +62,7 @@
               </svg>
               <span class="span show-for-sr">{{lang 'product.reviews.stars_count' NUM=3}}</span>
             </label>
-            <input type="radio" id="stars-2" class="show-for-sr" name="revrating" value="2">
+            <input type="radio" id="stars-2" class="form-input form-radio show-for-sr" name="revrating" value="2" required aria-required="true">
             <label for="stars-2" class="star" title="{{lang 'product.reviews.stars_count' NUM=2}}">
               <svg class="star star-full">
                 <use xlink:href="#icon-star"></use>
@@ -68,7 +72,7 @@
               </svg>
               <span class="span show-for-sr">{{lang 'product.reviews.stars_count' NUM=2}}</span>
             </label>
-            <input type="radio" id="stars-1" class="show-for-sr" name="revrating" value="1">
+            <input type="radio" id="stars-1" class="form-input form-radio show-for-sr" name="revrating" value="1" required aria-required="true">
             <label for="stars-1" class="star" title="{{lang 'product.reviews.stars_count' NUM=1}}">
               <svg class="star star-full">
                 <use xlink:href="#icon-star"></use>

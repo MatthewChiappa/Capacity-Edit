@@ -10,7 +10,9 @@
       {{#if theme_settings.category_display '===' 'show_categories'}}
         {{#each categories}}
           <li class="nav-menu-item {{#if children}}menu-dropdown{{/if}}" >
-            {{> components/navigation-item}}
+            {{> components/navigation-item
+              show_all=../theme_settings.categories-all-link
+            }}
           </li>
         {{/each}}
       {{else if theme_settings.category_display '===' 'show_categories_dropdown'}}
@@ -19,7 +21,9 @@
           <ul class="dropdown nav-submenu">
             {{#each categories}}
               <li class="nav-submenu-item {{#if children}} dropdown {{/if}}" >
-                {{> components/navigation-category-item}}
+                {{> components/navigation-category-item
+                  show_all=../theme_settings.categories-all-link
+                }}
               </li>
             {{/each}}
           </ul>
@@ -30,9 +34,11 @@
         <a href="#">{{lang 'common.shop_all'}}</a>
         <ul class="dropdown nav-submenu meganav-submenu">
           {{#each categories}}
-          <li class="meganav-submenu-item nav-submenu-item {{#if children}}dropdown{{/if}}">
-            {{> components/mega-navigation-item}}
-          </li>
+            <li class="meganav-submenu-item nav-submenu-item {{#if children}}dropdown{{/if}}">
+              {{> components/mega-navigation-item
+                show_all=../theme_settings.categories-all-link
+              }}
+            </li>
           {{/each}}
         </ul>
       </li>
@@ -44,7 +50,9 @@
           <div class="meganav-divider"></div>
           {{#each categories}}
           <li class="blurred meganav-submenu-item nav-submenu-item {{#if children}}dropdown{{/if}}">
-            {{> components/mega-navigation-item}}
+            {{> components/mega-navigation-item
+              show_all=../theme_settings.categories-all-link
+            }}
           </li>
           {{/each}}
         </ul>
@@ -54,7 +62,9 @@
     {{#if theme_settings.show_pages}}
       {{#each pages}}
         <li class="nav-menu-item {{#if children}} menu-dropdown {{/if}}" >
-          {{> components/navigation-item}}
+          {{> components/navigation-item
+            show_all=../theme_settings.categories-all-link
+          }}
         </li>
       {{/each}}
     {{/if}}

@@ -17,7 +17,11 @@ blog:
   {{> components/common/shipping-messages}}
 
   {{#if carousel.slides.length}}
-    {{> components/mosaic}}
+    {{#if theme_settings.carousel_style '===' 'mosaic'}}
+      {{> components/mosaic}}
+    {{else}}
+      {{> components/slideshow}}
+    {{/if}}
   {{/if}}
   {{{snippet 'home_content'}}}
 

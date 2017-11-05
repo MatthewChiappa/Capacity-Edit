@@ -1,5 +1,5 @@
 {{#if category.products}}
-  <div class="collection-product-listing with-sidebar">
+  <div class="collection-product-listing {{#unless theme_settings.hide_sidebar}}with-sidebar{{/unless}}">
     <form action="/compare" method="POST" class="form {{#if category.show_compare}}compare-enabled{{/if}}" data-product-compare>
       <div class="product-grid grid-l-3 grid-m-2">
         {{#each category.products}}

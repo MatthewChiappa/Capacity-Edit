@@ -91,12 +91,12 @@ export default class FacetedSearch {
             throw new Error(err);
           }
           $(response).insertAfter($navList);
-          $('.faceted-search-option-columns').toggle();
+          $toggle.siblings('.faceted-search-option-columns').toggle();
           this.callbacks.didUpdate();
         });
       }
     } else {
-      $('.faceted-search-option-columns').toggle();
+      $toggle.siblings('.faceted-search-option-columns').toggle();
       this.callbacks.didUpdate();
     }
 

@@ -2,6 +2,95 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+##[1.14.7] - 2017-11-02
+### Added
+- Users not sure if they have an account on your store? Well now when they request
+  a password reset and the email doesn't match they get a little note that tells
+  them they may get a reset link and if they don't they may not have their email
+  quite right.
+- Now you can let users chose none if they have already chosen an option they
+  don't actually want. None is supported for non-required multiple choice product
+  options.
+
+##[1.14.6] - 2017-10-05
+
+### Fixed
+- Our new and improved marketing banners are now like a box of chocolates, you
+  never know what you're going to get!
+
+### Fixed
+- Hide sold out messages if there is no sold out message (THEME-1419)
+
+##[1.14.5] - 2017-09-14
+
+### Added
+- Added missing title and alt tags for product thumbnail images (THEME-1369)
+
+### Fixed
+- Fixed show all option not appearing in dropdown menus (THEME-1351)
+
+##[1.14.4] - 2017-07-27
+
+### Fixed
+- Fixed issue with carousel swap settings not working (THEME-1372)
+
+### Added
+- Added sold out badge to product listing pages
+- Added RSS syndication page
+
+### Changed
+- Changed select wrapper to match inputs
+
+##[1.14.3] - 2017-06-22
+
+### Added
+- Added image for gift certificates in cart (THEME-1213)
+- View cart and checkout links added to product success message
+- Added an option for slideshow autoplay
+
+### Changed
+- Changed swatch preview to use the image's natural aspect ratio
+- Made rating a required field in the customer review form
+
+### Fixed
+- Removed top border from slideshow
+- Correctly escape slideshow text
+
+
+##[1.14.2] - 2017-06-08
+
+### Added
+- Added auto rotate to home page carousel (THEME-1316)
+- Added "Out of stock" text to item page when an item has 0 inventory (THEME-1334)
+- Lightbox added to product images (fixes THEME-1251)
+- Theme setting added to allow sidebar to be toggled on and off
+
+### Fixed
+- Fixed issue where date field year option would not show if the date range was within one year (THEME-1331)
+- Variable declaration for all link in mega navigation fixed to show all link when chosen in theme settings
+- Pagination links now open new pages at the top of the page rather then the bottom
+
+### Changed
+- Support documentation links in config file updated
+
+##[1.14.1] - 2017-05-25
+
+### Added
+- Unsubscribe page for when users remove themselves from mailing lists (fixes THEME-1269)
+- Theme support for optimized checkout platform option
+
+### Changed
+- Reference to bc-tabs in package.json to avoid breaking change in module update
+- Updated @bigcommerce/stencil-utils to 1.0.7
+- Added option for the "All {category}" link in the nav
+
+
+### [1.13.0] - 2017-04-27
+
+### Changed
+- Add option for a slideshow on the homepage
+
+
 ### [1.12.2] - 2017-04-20
 
 #### Fixed
@@ -33,7 +122,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Added an option to show more blog posts on the front page
- 
+
 ### Changed
 - Show image of product categories if there is one
 

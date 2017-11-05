@@ -15,11 +15,13 @@ brand:
 
     {{{snippet 'brand'}}}
 
-    {{#if brand.products.length ">" 0}}
-      <aside class="collection-sidebar" data-collection-sidebar data-brand-sidebar>
-        {{> components/brand/sidebar}}
-      </aside>
-    {{/if}}
+    {{#unless theme_settings.hide_sidebar}}
+      {{#if brand.products.length ">" 0}}
+        <aside class="collection-sidebar" data-collection-sidebar data-brand-sidebar>
+          {{> components/brand/sidebar}}
+        </aside>
+      {{/if}}
+    {{/unless}}
 
     <section data-brand>
       {{> components/brand/product-listing}}

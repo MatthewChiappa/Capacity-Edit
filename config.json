@@ -1,5 +1,5 @@
 {
-  "name": "Capacity",
+  "name": "Capacity - Editing",
   "version": "1.12.2",
   "css_compiler": "scss",
   "autoprefixer_cascade": true,
@@ -213,21 +213,110 @@
       },
       "settings": {
         "primary-font": "Google_Tenor+Sans_400",
-        "secondary-font": "Google_Cardo_400,700",
-        "body_color": "#8c7c7c",
+        "secondary-font": "Google_Lato_400,700",
+        "main_navigation_font": "primary",
+        "footer_navigation_font": "primary",
+        "price_font": "secondary",
+        "button_font": "primary",
+        "body_color": "#555656",
         "header_color": "#ffffff",
         "primary_color": "#a77f76",
         "primary_button_background_color": "#a08c8c",
-        "navigation_color": "#a08c8c",
-        "accent_color": "#675d5d",
-        "page_background_color": "#ede7e5",
-        "banner_background_color": "#b69e9e",
-        "banner_link_color": "#675d5d",
+        "navigation_color": "#555656",
+        "accent_color": "#0f0f0f",
+        "border_color": "#f7f6f6",
+        "input_color": "#555656",
+        "input_background_color": "#ffffff",
+        "input_border_color": "#020202",
+        "select_border_color": "#e6e6e6",
+        "page_background_color": "#e9eaef",
+        "banner_background_color": "#555656",
+        "banner_link_color": "#7b7c7c",
         "footer_background_color": "#ffffff",
-        "footer_color": "#8c7c7c",
-        "heading_color": "#675d5d",
-        "section_title_color": "#675d5d",
-        "error_color": "#ff2828"
+        "footer_color": "#555656",
+        "heading_color": "#7b7c7c",
+        "section_title_color": "#7b7c7c",
+        "highlight_color": "ce3834",
+        "star_color": "#f6c61f",
+        "error_color": "#c13131",
+        "promo_color": "#555656",
+        "default_image": "/assets/img/no-image.svg",
+        "navigation_text_transform": "uppercase",
+        "mosaic_text_color": "#ffffff",
+        "mosaic_button_text": "#ffffff",
+        "mosaic_button_background": "#555656",
+        "show_quickshop": true,
+        "brands_images": false,
+        "brands_footer": true,
+        "brands_cap": 5,
+        "product_count": 12,
+        "theme_credits": true,
+        "show_copyright": true,
+        "sitemap": true,
+        "move_social_icons": false,
+        "payment_visa": true,
+        "payment_mastercard": true,
+        "payment_american_express": true,
+        "payment_discover": true,
+        "payment_paypal": true,
+        "payment_apple_pay": true,
+        "show_pages": true,
+        "category_display": "show_categories_meganav",
+        "homepage_featured_products_limit": 8,
+        "homepage_new_products_limit": 4,
+        "homepage_show_blog": true,
+        "homepage_blog_article_limit": 2,
+        "product_review_count": 4,
+        "product_purchase_disable_ajax": false,
+        "show_product_details": true,
+        "apple_pay_style": "white-border",
+        "product_image_aspect_ratio": "four-by-five",
+        "price_as_low_as": false,
+        "show_home_link": false,
+        "show_categories": true,
+        "product_sale_badges": false,
+        "_images": {
+          "account-product-thumbnail": {
+            "width": 440,
+            "height": 600
+          },
+          "account-logo": {
+            "width": 200,
+            "height": 200
+          },
+          "core-picklist-thumb": {
+            "width": 80,
+            "height": 200
+          },
+          "core-product-picklist": {
+            "width": 80,
+            "height": 200
+          },
+          "core-blog-thumbnail": {
+            "width": 800,
+            "height": 800
+          },
+          "thumbnail": {
+            "width": 80,
+            "height": 40
+          },
+          "small": {
+            "width": 300,
+            "height": 300
+          },
+          "gallery": {
+            "width": 650,
+            "height": 650
+          },
+          "medium": {
+            "width": 900,
+            "height": 900
+          },
+          "large": {
+            "width": 1280,
+            "height": 1280
+          }
+        }
       }
     },
     {

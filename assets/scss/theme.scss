@@ -3884,7 +3884,7 @@ $mobile-nav-tools-height: 45px;
 // Background Image
 $site-background-image: stencilString("site_background_image");
 
-$footer-alt-opacity: 0.55;
+$footer-alt-opacity: 1;
 
 
 // Library
@@ -4363,8 +4363,8 @@ body:hover .visually-hidden button {
     border-color: darken($primary-button-background-color, 5%);
 
     &:hover {
-      @include button-hover($primary-button-background-color, background-color);
-      color: $primary-button-color;
+      @include button-hover($accent-color, background-color);
+      color: $primary-button-background-color;
     }
   }
 
@@ -4414,6 +4414,26 @@ body:hover .visually-hidden button {
   & + & {
     margin-left: 11px;
   }
+}
+
+.button.button-primary {
+    background-color: $body-color;
+    
+     &:hover {
+      color: darken($body-color, 10%);
+      background-color: darken($banner-background-color, 5%);
+    }
+}
+
+.button.button-secondary {
+    color: $body-color;
+    border-color: $body-color;
+    
+     &:hover {
+      color: darken($banner-background-color, 10%);
+      border-color: darken($banner-background-color, 10%);
+      background-color: lighten($border-color, 5%);
+    }
 }
 
 /* scss-combine:general/form */
@@ -5175,7 +5195,7 @@ body {
 .primary-navigation {
   @include antialias($white);
   height: $mobile-navbar-height;
-  background: $banner-background-color;
+  background: $body-color;
 
   a {
     color: $white;
@@ -5550,7 +5570,7 @@ body {
   }
 
   a {
-    color: $accent-color;
+    color: $heading-color;
   }
 }
 
@@ -6049,10 +6069,10 @@ body {
 
 .branding {
   position: absolute;
-  top: calc(50% + #{$primary-navigation-height / 4});
-  left: 50%;
+  top: calc(50% + #{$primary-navigation-height / 3});
+  left: 42%;
   z-index: index($elements, branding);
-  transform: translate(-50%, -50%);
+  transform: translate(-40%, -40%);
 
   @include media($max: 315px) {
     width: 100%;
@@ -6067,7 +6087,7 @@ body {
     max-height: 120px;
 
     @include breakpoint(m-up) {
-      max-width: 100%;
+      max-width: 140%;
       max-height: 200px;
     }
 
@@ -6136,7 +6156,7 @@ body {
   }
 
   @include breakpoint(l-up) {
-    padding: 47px 40px 33px;
+    padding: 47px 35px 33px;
   }
 
   a {
@@ -6178,7 +6198,7 @@ body {
   .logo { display: block; }
 
   .footer-logo-image {
-    max-width: 100px;
+    max-width: 250px;
   }
 
   .text {
@@ -6430,6 +6450,7 @@ body {
 .footer-payment-icons-list {
   font-size: 0;
   opacity: $footer-alt-opacity;
+  display: grid;
 
   @include breakpoint(m) {
     text-align: center;
@@ -6490,7 +6511,7 @@ body {
   color: $lightest-text;
 
   .active & {
-    color: $primary-color;
+    color: darken($accent-color, 5%);
   }
 }
 
@@ -6846,10 +6867,14 @@ body {
   font-size: 15px;
 }
 
+a.product-item-button {
+    color: $body-color;
+}
+
 .product-item-price {
   margin-top: 7px;
   margin-bottom: 7px;
-  color: $lighter-text;
+  color: $accent-color;
 }
 
 // Product Options
@@ -6954,7 +6979,7 @@ body {
       overflow: hidden;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
 
       .hide-for-ratio {
         @extend %visually-hidden;
@@ -7004,7 +7029,7 @@ body {
 /* scss-combine:product/product-price */
 .price {
   font-family: $price-font;
-  color: $lighter-text;
+  color: $accent-color;
 
   .product-header & {
     margin-top: 8px;
@@ -7085,10 +7110,15 @@ body {
   .product-main-image {
     text-align: center;
 
-    .product-image { max-height: 600px; }
+    .product-image { 
+        max-height: 600px; 
+    }
   }
 }
 
+img.product-image {
+    max-width: 50%;
+}
 
 // Pages
 /* scss-combine:pages/product */
@@ -7157,7 +7187,7 @@ body {
 .product-detail {
   margin-bottom: $gutter / 3;
   font-family: $primary-font;
-  color: $lightest-text;
+  color: $accent-color;
 }
 
 .product-detail-key {
@@ -10004,6 +10034,7 @@ $auth-font-size: $account-font-size !default;
 
   .social-link {
     margin-right: 12px;
+    vertical-align: middle;
 
     &:last-of-type {
       margin-right: 0;
@@ -10012,12 +10043,12 @@ $auth-font-size: $account-font-size !default;
     > a {
       width: 15px;
       height: 15px;
-      color: $lightest-text;
+      color: $body-color;
 
       // scss-lint:disable NestingDepth
       &:hover,
       &:active {
-        color: $primary-color;
+        color: $body-color;
       }
     }
   }

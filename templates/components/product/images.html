@@ -5,7 +5,7 @@
 {{#if product_thumbs.length ">" 1}}
   <div class="product-thumbnails">
     {{#each product_thumbs}}
-      <span class="product-thumbnail {{#if @first}}active{{/if}}" data-image-thumb data-high-res="{{getImage this 'medium'}}">
+      <span class="product-thumbnail {{#if @first}}active{{/if}}" data-image-thumb data-high-res="{{getImage this 'large'}}">
         <img src="{{getImage this 'thumbnail'}}">
       </span>
     {{/each}}

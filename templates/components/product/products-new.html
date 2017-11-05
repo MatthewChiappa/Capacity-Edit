@@ -1,0 +1,14 @@
+
+{{#if products}}
+  <section class="products-new">
+    <h2 class="section-title">{{lang 'home.new_products'}}</h2>
+    <div class="product-grid {{grid_classes}}">
+      {{#each products}}
+        {{> components/product/product-item this
+          show_rating=settings.show_product_ratings
+          settings=../theme_settings
+          show_wishlist=settings.show_wishlist}}
+      {{/each}}
+    </div>
+  </section>
+{{/if}}

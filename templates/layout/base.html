@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="{{ locale_name }}">
+
+<head>
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+
+  <title>{{head.title}}</title>
+
+  {{{head.meta_tags}}}
+  {{{head.config}}}
+
+  <link href="{{head.favicon}}" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  {{{stylesheet '/assets/css/theme.css'}}}
+  {{ getFontsCollection }}
+
+  {{{head.scripts}}}
+  {{{head.rsslinks}}}
+  {{inject 'themeImageSizes' theme_settings._images}}
+  {{> components/global-injects}}
+  {{{snippet 'htmlhead'}}}
+  {{#if page_type '===' 'product'}}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog' }}
+    {{> components/common/facebook-like}}
+  {{else if page_type '===' 'blog_post' }}
+    {{> components/common/facebook-like}}
+  {{/if}}
+
+  {{> core/structured-data/website}}
+</head>
+
+<body class="{{> components/body-classes}}">
+  {{{snippet 'header'}}}
+  <div class="icon-sprite">{{> components/common/icons/sprite}}</div>
+
+  <div class="page-wrap">
+
+    {{> components/common/banners banners.top}}
+
+    {{> components/header}}
+
+    <main class="main-content">
+      {{#block "page"}}{{/block}}
+    </main>
+
+    {{> components/common/banners banners.bottom}}
+
+    {{> components/footer}}
+
+  </div>
+
+  {{> core/structured-data/breadcrumbs}}
+  <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+  <script>
+    // Exported in app.js
+    window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+  </script>
+  {{{footer.scripts}}}
+  {{{snippet 'footer'}}}
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+{{#if settings.store_logo.image.data}}
+  <a class="logo" href="/">
+    <img class="{{location}}-logo-image" src="{{getImage settings.store_logo.image 'logo'}}" alt="{{settings.store_logo.image.alt}}">
+  </a>
+{{/if}}
+<h1 class="text {{#if settings.store_logo.image.data}}visually-hidden{{/if}}"><a href="/">{{settings.store_logo.title}}</a></h1>

@@ -1,0 +1,32 @@
+---
+brands: true
+brand:
+  products:
+    limit: {{theme_settings.product_count}}
+---
+
+{{#partial "page"}}
+
+  {{> components/common/breadcrumbs breadcrumbs}}
+
+  <div class="content collection">
+
+    <h1 class="page-heading">{{brand.name}}</h1>
+
+    {{{snippet 'brand'}}}
+
+    {{#if brand.products.length ">" 0}}
+      <aside class="collection-sidebar" data-collection-sidebar data-brand-sidebar>
+        {{> components/brand/sidebar}}
+      </aside>
+    {{/if}}
+
+    <section data-brand>
+      {{> components/brand/product-listing}}
+    </section>
+
+  </div>
+
+{{/partial}}
+
+{{> layout/base}}

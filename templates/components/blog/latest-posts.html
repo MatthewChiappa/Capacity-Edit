@@ -1,0 +1,9 @@
+<section class="latest-blog-posts content">
+  <h2 class="section-title">{{blog.name}}</h2>
+
+  <div class="latest-blog-posts-items">
+    {{#each blog.recent_posts }}
+      {{> components/blog/blog-item post=this settings=../theme_settings}}
+    {{/each}}
+  </div>
+</section>

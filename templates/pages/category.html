@@ -1,0 +1,41 @@
+---
+brands: true
+category:
+  shop_by_price: true
+  products:
+    limit: {{theme_settings.product_count}}
+shop_by_brand:
+  limit: 12
+---
+
+{{#partial "page"}}
+
+  {{> components/common/breadcrumbs breadcrumbs}}
+
+  <div class="content collection">
+    {{#if category.image}}
+      <img src="{{getImage category.image  (cdn theme_settings.default_image)}}"
+           alt="{{category.image.alt}}"
+           class="category-image"
+      >
+    {{/if}}
+    <h1 class="page-heading">{{category.name}}</h1>
+
+    {{{snippet 'categories'}}}
+
+    {{#if category.products.length ">" 0}}
+      <aside class="collection-sidebar" data-collection-sidebar data-category-sidebar>
+        {{> components/category/sidebar}}
+      </aside>
+    {{/if}}
+
+    <section data-category>
+      <div class="category-description {{#if category.products}}with-sidebar{{/if}}">{{{category.description}}}</div>
+      {{> components/category/product-listing}}
+    </section>
+
+  </div>
+
+{{/partial}}
+
+{{> layout/base}}

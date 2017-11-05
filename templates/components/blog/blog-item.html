@@ -1,0 +1,29 @@
+<article class="blog-item">
+
+  <a class="blog-item-link" href="{{post.url}}">
+
+    <!-- Post thumbnail -->
+    <figure class="blog-item-featured-image" style="background-image: url('{{getImage post.thumbnail 'gallery' (cdn settings.default_image)}}');">
+      <img class="show-for-sr" src="{{getImage post.thumbnail 'gallery' (cdn settings.default_image)}}" alt="{{post.thumbnail.alt}}">
+    </figure>
+
+  </a>
+
+    <!-- Post header -->
+  <header class="blog-item-header">
+    <time class="blog-item-timestamp">{{post.date_published}}</time>
+    <h1 class="blog-item-title"><a href="{{post.url}}">{{post.title}}</a></h1>
+  </header>
+
+  <!-- Post content -->
+  <section class="blog-item-content rte">
+    {{{summary}}}{{#if post.show_read_more}}&hellip;{{/if}}
+  </section>
+
+  {{#if post.show_read_more}}
+    <footer class="blog-item-footer">
+      <a class="read-more" href="{{post.url}}"><span>{{lang 'blog.read_more'}}</span></a>
+    </footer>
+  {{/if}}
+
+</article>

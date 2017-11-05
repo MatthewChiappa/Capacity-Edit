@@ -1,0 +1,459 @@
+/*! Theme: Capacity v1.12.2 */
+/* scss-combine:../../node_modules/bc-baseline/baseline */
+/* scss-combine:lib/extends */
+%clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%font-smoothing {
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* scss-combine:lib/mixins */
+@mixin media($max: false, $min: false) {
+  @if $max {
+    @if $min {
+      @media screen and (max-width: $max - 1) and (min-width: $min) { @content; }
+    } @else {
+      @media screen and (max-width: $max - 1) { @content; }
+    }
+  } @else {
+    @media screen and (min-width: $min) { @content; }
+  }
+}
+
+@mixin hover($color, $property: color) {
+  @if lightness($color) > 10% {
+    #{$property}: darken($color,8%);
+  } @else {
+    #{$property}: lighten($color,10%);
+  }
+}
+
+@mixin button-hover($color, $property: color) {
+  @if lightness($color) > 20% {
+    #{$property}: darken($color,5%);
+  } @else {
+    #{$property}: lighten($color,6%);
+  }
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+/* scss-combine:lib/text-inputs */
+// https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_text-inputs.scss
+
+@function assign-inputs($inputs, $pseudo: null) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+
+$text-inputs-list: 'input[type="color"]',
+                  'input[type="date"]',
+                  'input[type="datetime"]',
+                  'input[type="datetime-local"]',
+                  'input[type="email"]',
+                  'input[type="month"]',
+                  'input[type="number"]',
+                  'input[type="password"]',
+                  'input[type="search"]',
+                  'input[type="tel"]',
+                  'input[type="text"]',
+                  'input[type="time"]',
+                  'input[type="url"]',
+                  'input[type="week"]',
+                  'input:not([type])',
+                  'textarea';
+
+$all-text-inputs:        assign-inputs($text-inputs-list);
+$all-text-inputs-active: assign-inputs($text-inputs-list, active);
+$all-text-inputs-focus:  assign-inputs($text-inputs-list, focus);
+$all-text-inputs-hover:  assign-inputs($text-inputs-list, hover);
+
+
+/* scss-combine:styles/general */
+// scss-lint:disable VariableForProperty ColorVariable
+
+// Box model
+// See: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// - Links
+
+a {
+  text-decoration: none;
+}
+
+// - Headers
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+// - Basic elements
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol,
+dl {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: outside none;
+}
+
+ol {
+  list-style: outside decimal;
+}
+
+li {
+
+}
+
+hr {
+  height: 2px;
+  border: 0;
+}
+
+blockquote {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+pre {
+  padding: 1em;
+  background: #fafafa;
+}
+
+.show-for-sr {
+  // scss-lint:disable ImportantRule
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* scss-combine:styles/button */
+.button {
+  display: inline-block;
+  line-height: normal;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+
+  & + & {
+    margin-left: 5px;
+  }
+}
+
+/* scss-combine:styles/form */
+// scss-lint:disable VariableForProperty ColorVariable
+
+
+.form-fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// - Fields, a wrapper for a label and input
+
+.form-field {}
+
+// - Labels
+
+// <label class="form-label">
+//   <div class="form-label-text">Label</div>
+//   ... inputs ...
+// </label>
+.form-label {
+  display: block;
+}
+
+.form-label-text,
+.form-label-text-inline {
+  display: inline-block;
+}
+
+// - Inputs
+
+// text, email, password, search, telephone, tel, number, textarea, select
+.form-input {
+  display: block;
+  border: 1px solid;
+  border-color: inherit;
+  border-radius: 0;
+  box-sizing: border-box;
+
+  &::placeholder { opacity: 0.8; }
+}
+
+textarea.form-input { resize: vertical; }
+
+#{$all-text-inputs} {
+  &.form-input {
+    -webkit-appearance: none;
+  }
+}
+
+// Wrapper for checkbox and radio inputs
+// <div class="form-field form-inline">
+//   <label class="form-label">
+//     <span class="form-label-text">Check Me</span>
+//     <input class="form-input" type="checkbox">
+//   </label>
+// </div>
+.form-inline {
+  .form-label-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .form-input {
+    display: inline-block;
+  }
+}
+
+/* scss-combine:styles/table */
+table {
+  margin: 1em 0;
+  background: transparent;
+  border: 1px solid;
+  border-collapse: separate;
+  border-top: 0;
+  border-color: inherit;
+
+  &.table-clean {
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+td,
+th {
+  padding: 20px;
+  border-top: 1px solid;
+  border-top-color: inherit;
+
+  .table-clean & {
+    border: 0;
+  }
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  border-left: 1px solid;
+  border-left-color: inherit;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+
+
+/* scss-combine:vars/colors */
+$white: rgb(255,255,255);
+$black: rgb(0,0,0);
+
+$body-background-color: $white;
+$shadow-color: rgba($black,0.14);
+
+$body-color: stencilColor("body_color");
+$navigation-color: stencilColor("navigation_color");
+$header-color: stencilColor("header_color");
+
+$primary-color: stencilColor("primary_color");
+
+$accent-color: stencilColor("accent_color");
+$border-color: stencilColor("border_color");
+
+$navigation-hover: mix($navigation-color, $accent-color, 50%);
+
+$input-background-color: stencilColor("input_background_color");
+$input-color: stencilColor("input_color");
+$input-border-color: stencilColor("input_border_color");
+
+$page-background-color: stencilColor("page_background_color");
+$banner-background-color: stencilColor("banner_background_color");
+$banner-link-color: stencilColor("banner_link_color");
+
+$heading-color: stencilColor("heading_color");
+
+$footer-background-color: stencilColor("footer_background_color");
+$footer-color: stencilColor("footer_color");
+
+$section-title-color: stencilColor("section_title_color");
+
+$highlight-color: stencilColor("highlight_color");
+$star-color: stencilColor("star_color");
+
+$primary-button-background-color: stencilColor("primary_button_background_color");
+$primary-button-color: $white;
+
+$secondary-button-color: $primary-color;
+
+$disabled-button-background: darken($input-background-color, 10%);
+$disabled-button-color: lighten($input-color, 30%);
+
+$lighter-text: lighten($body-color, 6.5%);
+$lightest-text: lighten($body-color, 20%);
+
+$error-color: stencilColor("error_color");
+
+$promo-color: stencilColor("promo_color");
+
+$mosaic-text-color: stencilColor("mosaic_text_color");
+$mosaic-button-text: stencilColor("mosaic_button_text");
+$mosaic-button-background: stencilColor("mosaic_button_background");
+
+$select-border-color: #e6e6e6;
+$select-border-active: darken($select-border-color, 10%);
+$check-border-color: #bbbbbb;
+
+$breadcrumb-background-color: #f8f8f8;
+
+$placeholder-image-background: lighten($black, 75%);
+
+$alert-success: #54ca83;
+$alert-error: #de5949;
+$alert-info: #a6a6a6;
+
+/* scss-combine:lib/mixins */
+$max-width: 1300px;
+$font-size: 13px;
+$gutter: 15px;
+$ease-out-quad: cubic-bezier(0.250,0.460,0.450,0.940);
+
+//Breakpoints. These are the low value of the range
+
+$medium: 768px;
+$large: 992px;
+$xlarge: 1160px;
+
+@mixin breakpoint($point) {
+  @if $point == s {
+    @include media($max: $medium) { @content; }
+  }
+  @if $point == m {
+    @include media($max: $large) { @content; }
+  }
+  @if $point == m-only {
+    @include media($min: $medium, $max: $large) { @content; }
+  }
+  @if $point == m-up {
+    @include media($min: $medium) { @content; }
+  }
+  @if $point == l {
+    @include media($max: $xlarge) { @content; }
+  }
+  @if $point == l-only {
+    @include media($min: $large, $max: $xlarge) { @content; }
+  }
+  @if $point == l-up {
+    @include media($min: $large) { @content; }
+  }
+  @if $point == xl-up {
+    @include media($min: $xlarge) { @content; }
+  }
+}
+
+@mixin antialias($font-color) {
+  @if (lightness($font-color) > 50) {
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -o-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+
+.header {
+  background-color: $header-color;
+}
+
+.header-logo {
+  text-align: center;
+
+  > a > img {
+    max-width: 300px;
+    max-height: 120px;
+
+    @include breakpoint(m-up) {
+      max-width: 100%;
+      max-height: 200px;
+    }
+
+    @include media($max: 315px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.ExpressCheckoutTitle,
+.ExpressCheckoutContent {
+  max-width: 980px;
+}

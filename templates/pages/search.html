@@ -1,0 +1,28 @@
+---
+brands: true
+product_results:
+  limit: {{theme_settings.product_count}}
+---
+
+{{#partial "page"}}
+
+  <div class="content collection">
+
+    <h1 class="page-heading">{{lang 'search.results' term=forms.search.query total=product_results.pagination.total}}</h1>
+
+    {{#if result_count ">" 0}}
+      <aside class="collection-sidebar" data-collection-sidebar data-search-sidebar>
+        {{> components/search/sidebar}}
+      </aside>
+    {{/if}}
+
+    <section data-search>
+      {{{snippet 'search'}}}
+      {{> components/search/product-listing}}
+    </section>
+
+  </div>
+
+{{/partial}}
+
+{{> layout/base}}

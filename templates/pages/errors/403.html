@@ -1,0 +1,20 @@
+{{#partial "page"}}
+
+<div class="content">
+  <article class="page-container rte">
+    <h1 class="page-heading">{{lang 'errors.forbidden.title'}}</h1>
+    <div class="page-content error-page">
+      <p>{{lang 'errors.forbidden.message'}}</p>
+      <form class="error-search-form" action="{{urls.search}}">
+        <label class="search-label">
+          <input class="form-input" name="search_query" placeholder="{{lang 'errors.placeholder'}}" type="text">
+          <input class="button button-primary" type="submit" value="{{lang 'errors.submit'}}">
+        </label>
+      </form>
+    </div>
+  </article>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

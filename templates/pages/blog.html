@@ -1,0 +1,23 @@
+---
+cart: true
+blog:
+  posts:
+    limit: 6
+    summary: 400
+---
+
+{{#partial "page"}}
+
+<div class="content">
+  <div class="blog-index">
+    {{#each blog.posts}}
+      {{> components/blog/blog-item post=this settings=../theme_settings}}
+    {{/each}}
+  </div>
+
+  {{> components/common/pagination pagination.blog}}
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

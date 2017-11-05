@@ -1,0 +1,1 @@
+{"components/common/banners":"{{#if this}}\n  <div class=\"banners\">\n    {{#each this}}\n      <div class=\"banner rte\">\n        {{{this}}}\n      </div>\n    {{/each}}\n  </div>\n{{/if}}\n"}

@@ -1,0 +1,11 @@
+
+{{#if settings.account_creation_enabled}}
+  <div class="customer-links">
+    {{#if customer}}
+      <a href="{{urls.account.index}}">{{customer.name}}</a>
+      <a class="customer-link-logout" href="{{urls.auth.logout}}">{{lang 'common.account.log_out'}}</a>
+    {{else}}
+      <a href="{{urls.auth.login}}">{{lang 'common.account.log_in'}}</a>
+    {{/if}}
+  </div>
+{{/if}}

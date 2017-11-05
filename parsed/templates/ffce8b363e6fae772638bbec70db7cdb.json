@@ -1,0 +1,1 @@
+{"components/navigation-toggle":"\n<button type=\"submit\" class=\"navigation-toggle\" data-navigation-toggle>\n  <svg class=\"icon-menu\">\n    <use xlink:href=\"#icon-menu\"></use>\n  </svg>\n</button>\n"}

@@ -1,0 +1,20 @@
+---
+customer:
+  orders:
+    limit: 4
+---
+
+{{#partial "page"}}
+
+<div class="content">
+  <article class="account-container">
+    {{> core/account/orders/all}}
+    {{{snippet 'account'}}}
+  </article>
+</div>
+
+{{{snippet 'account'}}}
+
+{{/partial}}
+
+{{> layout/base}}

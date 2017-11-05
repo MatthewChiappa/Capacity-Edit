@@ -1,0 +1,19 @@
+<a class="cart-preview-trigger" data-cart-preview-toggle data-cart-count="{{cart.quantity}}" href="{{urls.cart}}">
+  <svg class="icon-cart">
+    <use xlink:href="#icon-cart"></use>
+  </svg>
+  <span class="cart-preview-label">{{lang 'cart.preview.label'}}</span>
+  <span class="cart-preview-quantity" id="cart-preview-count" data-cart-preview-count>{{cart.quantity}}</span>
+</a>
+
+<div class="cart-preview-container" data-cart-preview-container>
+  <h2 class="cart-preview-title">{{lang 'cart.preview.title'}}</h2>
+  <button class="cart-preview-close" data-cart-preview-toggle>
+    <svg class="icon-cart-close">
+      <use xlink:href="#icon-cart-close"></use>
+    </svg>
+  </button>
+  <div class="cart-preview" data-cart-preview>
+    {{> components/cart/cart-preview}}
+  </div>
+</div>

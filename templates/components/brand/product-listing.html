@@ -1,0 +1,29 @@
+{{#if brand.products}}
+  <div class="collection-product-listing {{#if brand.faceted_search_enabled}}with-sidebar{{/if}}">
+    <form action="/compare" method="POST" class="form {{#if brand.show_compare}}compare-enabled{{/if}}" data-product-compare>
+      <div class="product-grid {{#if brand.faceted_search_enabled}}grid-l-3{{/if}} grid-m-2">
+        {{#each brand.products}}
+          {{> components/product/product-item this
+            show_rating=settings.show_product_ratings
+            settings=../theme_settings
+            show_compare=../brand.show_compare show_wishlist=settings.show_wishlist}}
+        {{/each}}
+      </div>
+      {{#if brand.show_compare}}
+        {{> components/common/compare-tab}}
+      {{/if}}
+    </form>
+  </div>
+{{else}}
+  <div class="collection-empty">
+    <h2 class="search-again">{{lang 'search.empty'}}</h2>
+    <form class="faceted-search-form" action="/search.php">
+      <input class="faceted-search-input form-input" name="search_query" placeholder="{{lang 'search.placeholder'}}" type="text">
+      <button class="faceted-search-submit button button-primary" type="submit">{{lang 'search.submit'}}</button>
+    </form>
+  </div>
+{{/if}}
+
+{{#if brand.products.length}}
+  {{> components/common/pagination pagination.brand}}
+{{/if}}

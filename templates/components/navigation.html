@@ -1,0 +1,66 @@
+
+<nav class="main-menu">
+  <ul class="nav-menu">
+    {{#if theme_settings.show_home_link}}
+      <li class="nav-menu-item">
+        <a href="{{urls.home}}">{{lang 'common.home_link'}}</a>
+      </li>
+    {{/if}}
+    {{#if theme_settings.show_categories}}
+      {{#if theme_settings.category_display '===' 'show_categories'}}
+        {{#each categories}}
+          <li class="nav-menu-item {{#if children}}menu-dropdown{{/if}}" >
+            {{> components/navigation-item}}
+          </li>
+        {{/each}}
+      {{else if theme_settings.category_display '===' 'show_categories_dropdown'}}
+        <li class="nav-menu-item menu-dropdown">
+          <a href="#">{{lang 'common.shop_all'}}</a>
+          <ul class="dropdown nav-submenu">
+            {{#each categories}}
+              <li class="nav-submenu-item {{#if children}} dropdown {{/if}}" >
+                {{> components/navigation-category-item}}
+              </li>
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
+      {{#if theme_settings.category_display '===' 'show_categories_meganav'}}
+      <li class="nav-menu-item menu-dropdown menu-meganav" data-menu-meganav>
+        <a href="#">{{lang 'common.shop_all'}}</a>
+        <ul class="dropdown nav-submenu meganav-submenu">
+          {{#each categories}}
+          <li class="meganav-submenu-item nav-submenu-item {{#if children}}dropdown{{/if}}">
+            {{> components/mega-navigation-item}}
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/if}}
+      {{#if theme_settings.category_display '===' 'show_categories_meganav_large'}}
+      <li class="nav-menu-item menu-dropdown menu-meganav menu-meganav-large" data-menu-meganav-large>
+        <a href="#">{{lang 'common.shop_all'}}</a>
+        <ul class="dropdown nav-submenu meganav-submenu">
+          <div class="meganav-divider"></div>
+          {{#each categories}}
+          <li class="blurred meganav-submenu-item nav-submenu-item {{#if children}}dropdown{{/if}}">
+            {{> components/mega-navigation-item}}
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/if}}
+    {{/if}}
+    {{#if theme_settings.show_pages}}
+      {{#each pages}}
+        <li class="nav-menu-item {{#if children}} menu-dropdown {{/if}}" >
+          {{> components/navigation-item}}
+        </li>
+      {{/each}}
+    {{/if}}
+  </ul>
+  <div class="nav-tools">
+    {{> components/currency-selector}}
+    {{> components/customer-links}}
+  </div>
+</nav>

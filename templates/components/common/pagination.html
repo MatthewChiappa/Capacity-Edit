@@ -1,0 +1,38 @@
+<div class="pagination">
+  <ul class="pagination-list">
+
+    {{#if previous}}
+      <li class="pagination-previous">
+        <a class="pagination-link" href="{{previous}}" data-faceted-search-facet>
+          {{lang 'core.pagination.previous'}}
+          <span class="pagination-page">{{lang 'core.pagination.page'}}</span>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if links.length}}
+      <li class="pagination-item">
+        <span class="pagination-page">{{lang 'core.pagination.page'}}</span>
+      </li>
+      {{#each links}}
+        <li class="pagination-item">
+          {{#if ../current "!==" number}}
+            <a class="pagination-link" href="{{url}}" data-faceted-search-facet>{{number}}</a>
+          {{else}}
+            <span class="pagination-current">{{number}}</span>
+          {{/if}}
+        </li>
+      {{/each}}
+    {{/if}}
+
+    {{#if next}}
+      <li class="pagination-next">
+        <a class="pagination-link" href="{{next}}" data-faceted-search-facet>
+          {{lang 'core.pagination.next'}}
+          <span class="pagination-page">{{lang 'core.pagination.page'}}</span>
+        </a>
+      </li>
+    {{/if}}
+
+  </ul>
+</div>

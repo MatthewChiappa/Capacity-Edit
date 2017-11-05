@@ -1,0 +1,16 @@
+{{#if social_media}}
+  <nav class="social-nav">
+    <h2 class="footer-menu-header footer-social-header">{{lang 'common.footer.social'}}</h2>
+    <ul class="social-nav-list">
+      {{#each social_media}}
+        <li class="social-link">
+          <a href="{{url}}" class="{{display_name}}" target="_blank">
+            <svg class="icon-social">
+              <use xlink:href="#icon-{{#if display_name '===' 'google+'}}google-plus{{else}}{{display_name}}{{/if}}"></use>
+            </svg>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+{{/if}}

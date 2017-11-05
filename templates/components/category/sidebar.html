@@ -1,0 +1,54 @@
+<div class="faceted-search" data-faceted-search>
+  {{#if category.subcategories}}
+    <div class="category-nav">
+      <h3 class="sidebar-section-heading">{{lang 'category.subcategories'}}</h3>
+      <ul class="category-nav-list">
+        {{#each category.subcategories}}
+          <li class="category-nav-list-item">
+            <a href="{{url}}">{{name}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+
+  {{#if category.faceted_search_enabled}}
+    {{#each category.facets}}
+      {{#if total_items "!=" 0}}
+        {{#if visible}}
+          <div class="facet-filter" data-facet-filter>
+
+            <h3 class="facet-section-heading">
+              {{title}}
+
+              {{#if remove_url}}
+                <a class="facet-clear" href="{{remove_url}}" data-faceted-search-facet data-facet-remove>{{lang 'faceted_search.clear'}}</a>
+              {{/if}}
+
+              {{#unless selected }}
+                <span class="facet-toggle {{#if start_collapsed}}is-open{{/if}}" data-facet-toggle>
+                  <svg class="icon-close-small">
+                    <use xlink:href="#icon-close-small"></use>
+                  </svg>
+                </span>
+              {{/unless}}
+            </h3>
+
+            {{{dynamicComponent 'components/faceted-search/facets'}}}
+          </div>
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  {{else}}
+    {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+    {{> components/category/shop-by-brand shop_by_brand=shop_by_brand category_url=category.url}}
+  {{/if}}
+
+</div>
+{{> components/common/sort sort=pagination.category.sort}}
+
+{{#if category.faceted_search_enabled}}
+  <a class="facet-clear-all" href="{{category.selected.remove_all_url}}" data-faceted-search-facet data-facet-remove>
+    {{lang 'faceted_search.clear_all'}}
+  </a>
+{{/if}}

@@ -1,0 +1,44 @@
+---
+products:
+  featured:
+    limit: 4
+---
+
+{{#partial "page"}}
+
+  <div class="cart-messages">
+    {{> components/common/shipping-messages}}
+  </div>
+
+  <h1 class="page-heading">{{lang 'cart.title'}}</h1>
+
+  {{#if cart.items}}
+    <div class="cart-container">
+      <div class="cart-content" data-cart-content>
+        {{> components/cart/content}}
+        {{{snippet 'cart'}}}
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-totals" data-cart-totals>
+          {{> components/cart/totals}}
+        </div>
+
+        <div class="continue-shopping">
+          <a href="{{urls.home}}">{{lang 'cart.continue_shopping'}}</a>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <div class="cart-empty">
+      <div class="cart-container">
+        <p class="empty-cart-message">{{lang 'cart.empty'}}</p>
+        <a class="button button-secondary" href="{{urls.home}}">{{lang 'cart.continue_shopping'}}</a>
+      </div>
+
+      {{> components/product/products-featured products=products.featured grid_classes="grid-m-2"}}
+    </div>
+  {{/if}}
+
+{{/partial}}
+{{> layout/base}}

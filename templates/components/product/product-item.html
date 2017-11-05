@@ -1,0 +1,60 @@
+
+<article class="product-item">
+
+  <figure class="product-item-thumbnail">
+    {{#if settings.show_quickshop}}
+      <a href="{{url}}" class="product-item-quickshop button button-secondary" data-quick-shop data-product-id="{{id}}">{{lang 'product.quickshop.view'}}</a>
+    {{/if}}
+
+    {{#if show_wishlist}}
+      <a class="product-item-wishlist" href="{{add_to_wishlist_url}}">
+        <svg class="icon-wishlist">
+          <use xlink:href="#icon-wishlist"></use>
+        </svg>
+        {{lang 'common.wishlist'}}
+      </a>
+    {{/if}}
+
+    {{#if show_compare}}
+      <div class="product-item-compare form-field form-field-common form-field-checkbox">
+        <div class="form-field-control">
+          <label class="form-label" for="compare-{{id}}">
+            <input type="checkbox" class="form-input form-checkbox" name="products[]" value="{{id}}" id="compare-{{id}}">
+            <span class="form-label-text">{{lang 'common.compare.title'}}</span>
+          </label>
+        </div>
+      </div>
+    {{/if}}
+
+    <a class="product-item-image"
+       href="{{url}}"
+       title="{{name}}"
+       style="background-image: url({{getImage image 'gallery' (cdn settings.default_image)}})"
+    >
+      <img src="{{getImage image 'gallery' (cdn settings.default_image)}}" class="hide-for-ratio" alt="{{image.alt}}">
+    </a>
+  </figure>
+
+  <div class="product-item-details">
+
+    <h3 class="product-item-title">
+      <a href="{{url}}" title="{{name}}">{{name}}</a>
+    </h3>
+
+    <div class="product-item-price">
+      {{> components/product/price
+        price=price
+        show_savings=false
+        schema_org=false
+        show_tax_labels=true
+        price_as_low_as=settings.price_as_low_as
+        sale_badges=settings.product_sale_badges
+      }}
+    </div>
+
+    {{#if show_rating}}
+      {{> components/product/product-rating rating=rating total=num_reviews}}
+      {{{snippet 'product_rating'}}}
+    {{/if}}
+  </div>
+</article>

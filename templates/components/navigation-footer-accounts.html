@@ -1,0 +1,18 @@
+{{#any settings.account_creation_enabled settings.show_wishlist settings.gift_certificates_enabled}}
+  <ul class="footer-accounts-list">
+    {{#if settings.account_creation_enabled}}
+      {{#unless customer.id}}
+        <li><a href="{{urls.auth.login}}">{{{lang 'common.account.log_in'}}}</a></li>
+      {{else}}
+        <li><a href="{{urls.account.index}}">{{{lang 'common.account.account'}}}</a></li>
+        <li><a href="{{urls.auth.logout}}">{{{lang 'common.account.log_out'}}}</a></li>
+      {{/unless}}
+    {{/if}}
+    {{#if settings.gift_certificates_enabled}}
+      <li><a href="{{urls.gift_certificate.purchase}}">{{{lang 'common.gift_certificates'}}}</a></li>
+    {{/if}}
+    {{#if settings.show_wishlist}}
+      <li><a href="{{urls.account.wishlists.all}}">{{{lang 'common.wishlist'}}}</a></li>
+    {{/if}}
+  </ul>
+{{/any}}

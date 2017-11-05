@@ -1,0 +1,40 @@
+{{#if navigation}}
+  <ul class="footer-menu">
+    <li class="footer-menu-header">{{heading}}</li>
+    {{#each (limit navigation cap)}}
+      <li class="footer-menu-item">
+        <a href="{{url}}">{{name}}</a>
+        {{#if children}}
+          <ul class="footer-menu-tier-secondary">
+            {{#each children}}
+              <li class="footer-menu-item-secondary">
+                <a href="{{url}}">{{name}}</a>
+                {{#if children}}
+                  <ul class="footer-menu-tier-tertiary">
+                    {{#each children}}
+                      <li class="footer-menu-item-tertiary">
+                        <a href="{{url}}">{{name}}</a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </li>
+    {{/each}}
+    {{#if cap '<' navigation.length}}
+      <li class="footer-menu-catchall">
+        <a href="{{urls.brands}}">{{lang 'common.footer.all'}} {{heading}}</a>
+      </li>
+    {{/if}}
+    {{#if theme_settings.sitemap}}
+      {{#if sitemap_url}}
+        <li class="footer-menu-item">
+          <a href="{{sitemap_url}}">{{lang 'common.sitemap'}}</a>
+        </li>
+      {{/if}}
+    {{/if}}
+  </ul>
+{{/if}}

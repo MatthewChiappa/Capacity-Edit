@@ -1,0 +1,1 @@
+{"components/body-classes":"aspect-{{theme_settings.product_image_aspect_ratio}}\n{{page_type}}\n{{#unless in_production}}dev-environment{{/unless}}\n{{theme_settings.category_display}}\n"}

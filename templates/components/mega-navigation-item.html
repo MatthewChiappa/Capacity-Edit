@@ -1,0 +1,19 @@
+{{#if children}}
+  <a href="#" class="mega-submenu-trigger submenu-trigger" data-submenu-trigger>{{name}}</a>
+  <ul class="dropdown meganav-submenu nav-submenu">
+    <div class="meganav-submenu-header">
+      <div class="meganav-back" data-meganav-back>{{lang 'common.back_text'}}</div>
+      <h1 class="meganav-submenu-name">{{name}}</h1>
+    </div>
+    <li class="meganav-submenu-item nav-submenu-item">
+      <a href="{{url}}">{{lang 'common.all_text'}} {{name}}</a>
+    </li>
+    {{#each children}}
+      <li class="meganav-submenu-item nav-submenu-item">
+        {{> components/mega-navigation-item}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <a href="{{url}}">{{name}}</a>
+{{/if}}

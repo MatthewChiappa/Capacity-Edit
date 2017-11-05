@@ -1,0 +1,24 @@
+---
+cart: true
+product:
+  reviews:
+      limit: 999
+  related_products:
+      limit: 4
+  videos: true
+---
+
+{{#partial "page"}}
+
+  {{> components/common/breadcrumbs breadcrumbs}}
+
+  <div class="product-container" data-product-container>
+    {{> components/product/details}}
+    {{> components/product/products-related products=product.related_products grid_classes="grid-m-2"}}
+    {{> components/reviews/review-modal}}
+  </div>
+
+  {{> core/structured-data/product}}
+  {{> core/structured-data/product-reviews}}
+{{/partial}}
+{{> layout/base}}

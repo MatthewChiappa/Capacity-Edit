@@ -1,0 +1,22 @@
+{{#if shop_by_brand.length }}
+  <div class="shop-by">
+    <h3 class="sidebar-section-heading">{{lang 'category.shop_by_brand'}}</h3>
+    <ul class="shop-by-list">
+      {{#if shop_by_brand}}
+        {{#each shop_by_brand}}
+          <li class="shop-by-item {{#if selected }}is-active{{/if}}">
+            <a href="{{url}}">{{name}}</a>
+          </li>
+        {{/each}}
+      {{/if}}
+
+      {{#any shop_by_brand selected=true}}
+        <li class="shop-by-item">
+          <a href="{{category_url}}">
+            {{lang 'category.reset'}}
+          </a>
+        </li>
+      {{/any}}
+    </ul>
+  </div>
+{{/if}}

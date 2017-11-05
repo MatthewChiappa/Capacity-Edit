@@ -1,0 +1,37 @@
+<div class="faceted-search" data-faceted-search>
+  {{#if brand.faceted_search_enabled}}
+    {{#each brand.facets}}
+      {{#if total_items "!=" 0}}
+        {{#if visible}}
+          <div class="facet-filter" data-facet-filter>
+
+            <h3 class="facet-section-heading">
+              {{title}}
+
+              {{#if remove_url}}
+                <a class="facet-clear" href="{{remove_url}}" data-faceted-search-facet data-facet-remove>{{lang 'faceted_search.clear'}}</a>
+              {{/if}}
+
+              {{#unless selected }}
+                <span class="facet-toggle {{#if start_collapsed}}is-open{{/if}}" data-facet-toggle>
+                  <svg class="icon-close-small">
+                    <use xlink:href="#icon-close-small"></use>
+                  </svg>
+                </span>
+              {{/unless}}
+            </h3>
+
+            {{{dynamicComponent 'components/faceted-search/facets'}}}
+          </div>
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  {{/if}}
+</div>
+{{> components/common/sort sort=pagination.brand.sort}}
+
+{{#if brand.faceted_search_enabled}}
+  <a class="facet-clear-all" href="{{category.selected.remove_all_url}}" data-faceted-search-facet data-facet-remove>
+    {{lang 'faceted_search.clear_all'}}
+  </a>
+{{/if}}

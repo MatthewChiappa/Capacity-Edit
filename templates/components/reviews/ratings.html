@@ -1,0 +1,13 @@
+<div class="rating-stars" aria-hidden="true">
+  {{#for 1 5}}
+    {{#if ../this.rating '>=' $index}}
+      <svg class="rating-star star-full">
+        <use xlink:href="#icon-star"></use>
+      </svg>
+    {{else}}
+      <svg class="rating-star star-empty">
+        <use xlink:href="#icon-star-empty"></use>
+      </svg>
+    {{/if}}
+  {{/for}}
+</div>

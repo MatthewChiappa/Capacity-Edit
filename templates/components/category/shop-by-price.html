@@ -1,0 +1,20 @@
+{{#if shop_by_price.length}}
+  <div class="shop-by">
+    <h3 class="sidebar-section-heading">{{lang 'category.shop_by_price'}}</h3>
+    <ul class="shop-by-list">
+      {{#each shop_by_price}}
+        <li class="shop-by-item {{#if selected }}is-active{{/if}}">
+          <a href="{{url}}" alt="{{low.formatted}} - {{high.formatted}}">{{low.formatted}} - {{high.formatted}}</a>
+        </li>
+      {{/each}}
+
+      {{#any shop_by_price selected=true}}
+        <li class="shop-by-item">
+          <a href="{{category_url}}">
+            {{lang 'category.reset'}}
+          </a>
+        </li>
+      {{/any}}
+    </ul>
+  </div>
+{{/if}}

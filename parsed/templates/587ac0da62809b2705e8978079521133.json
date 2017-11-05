@@ -1,0 +1,1 @@
+{"components/search-form":"\n{{{snippet 'forms_search'}}}\n<form class=\"search-form\" action=\"{{urls.search}}\">\n  <label class=\"search-label\">\n    <svg class=\"icon-search\">\n      <use xlink:href=\"#icon-search\"></use>\n    </svg>\n    <input class=\"search-input\" name=\"search_query\" placeholder=\"{{lang 'header.search'}}\" type=\"text\">\n  </label>\n</form>\n"}

@@ -1,0 +1,59 @@
+
+<div data-cart-errors></div>
+
+<div class="cart-header">
+  <div class="cart-cell cart-product">{{lang 'cart.product.product'}}</div>
+  <div class="cart-cell cart-each">{{lang 'cart.product.each'}}</div>
+  <div class="cart-cell cart-quantity">{{lang 'cart.product.quantity'}}</div>
+  <div class="cart-cell cart-total">{{lang 'cart.product.total'}}</div>
+  <div class="cart-cell cart-remove">
+    <span class="visually-hidden">{{lang 'cart.product.remove'}}</span>
+  </div>
+</div>
+
+{{#each cart.items}}
+  <article class="cart-row" data-cart-item data-item-id="{{id}}">
+    <div class="cart-cell cart-image">
+      <a href="{{url}}">
+        <img src="{{getImage image 'small'  (cdn theme_settings.default_image)}}" alt="{{name}}">
+      </a>
+    </div>
+    <div class="cart-cell cart-product">
+      <a href="{{url}}" alt="{{name}}" class="cart-item-name">{{name}}</a>
+      {{#if options.length}}
+        <dl class="cart-item-options">
+          {{#each options}}
+            <dt>{{name}}: </dt>
+            <dd>{{value}}</dd>
+          {{/each}}
+        </dl>
+      {{/if}}
+      {{> components/cart/gift-wrap-item this}}
+    </div>
+    <div class="cart-cell cart-each">
+      <span class="cart-price-label">{{lang 'cart.product.each'}}:</span>
+      <span class="{{#if price_discounted}}price-discounted{{/if}}">{{price.formatted}}</span>
+      {{#if price_discounted}}
+        <span class="cart-item-discount">{{price_discounted.formatted}}</span>
+      {{/if}}
+    </div>
+    <div class="cart-cell cart-quantity">
+      {{> components/common/quantity this}}
+      <span class="cart-update-quantity" data-cart-item-update>{{lang 'cart.update'}}</span>
+    </div>
+    <div class="cart-cell cart-total">
+      <span class="cart-price-label">{{lang 'cart.product.total'}}:</span>
+      <span class="{{#if total_discounted}}price-discounted{{/if}}">{{total.formatted}}</span>
+      {{#if total_discounted}}
+        <span class="cart-item-discount">{{total_discounted.formatted}}</span>
+      {{/if}}
+    </div>
+    <div class="cart-cell cart-remove">
+      <a href="{{remove_url}}" data-cart-item-remove>
+        <svg class="icon-close">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </a>
+    </div>
+  </article>
+{{/each}}

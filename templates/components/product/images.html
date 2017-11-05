@@ -1,0 +1,13 @@
+<div class="product-main-image">
+  <img class="product-image" alt="{{product_image.alt}}" src="{{getImage product_image 'medium' default_image}}">
+</div>
+
+{{#if product_thumbs.length ">" 1}}
+  <div class="product-thumbnails">
+    {{#each product_thumbs}}
+      <span class="product-thumbnail {{#if @first}}active{{/if}}" data-image-thumb data-high-res="{{getImage this 'medium'}}">
+        <img src="{{getImage this 'thumbnail'}}">
+      </span>
+    {{/each}}
+  </div>
+{{/if}}

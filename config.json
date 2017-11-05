@@ -1,0 +1,314 @@
+{
+  "name": "Capacity",
+  "version": "1.12.2",
+  "css_compiler": "scss",
+  "autoprefixer_cascade": true,
+  "autoprefixer_browsers": [
+    "last 3 versions"
+  ],
+  "meta": {
+    "price": 17000,
+    "documentation_url": "https://www.pixelunion.net/support/capacity-theme-manual/",
+    "author_name": "Pixel Union",
+    "author_email": "support@pixelunion.net",
+    "author_support_url": "https://www.pixelunion.net/support/",
+    "composed_image": "capacity-composed.png",
+    "features": [
+      "fully_responsive",
+      "mega_navigation",
+      "masonry_design",
+      "quick_add_to_cart",
+      "switchable_product_view",
+      "product_comparison_table",
+      "complex_search_filtering",
+      "customizable_product_selector",
+      "cart_suggested_products",
+      "free_customer_support",
+      "free_theme_upgrades",
+      "high_res_product_images",
+      "product_filtering",
+      "advanced_quick_view",
+      "product_showcase",
+      "persistent_cart",
+      "one_page_check_out",
+      "product_videos"
+    ]
+  },
+  "resources": {
+    "cart": true,
+    "shop_by_brand": {
+      "limit": 11
+    }
+  },
+  "settings": {
+    "primary-font": "Google_Karla_400,700",
+    "secondary-font": "Google_PT+Sans_400,700",
+    "main_navigation_font": "primary",
+    "footer_navigation_font": "primary",
+    "price_font": "primary",
+    "button_font": "primary",
+    "body_color": "#666666",
+    "header_color": "#ffffff",
+    "primary_color": "#000000",
+    "primary_button_background_color": "#000000",
+    "navigation_color": "#222222",
+    "accent_color": "#777777",
+    "border_color": "#f2f2f2",
+    "input_color": "#555555",
+    "input_background_color": "#f0f0f0",
+    "input_border_color": "#f0f0f0",
+    "select_border_color": "#e6e6e6",
+    "page_background_color": "#edece8",
+    "banner_background_color": "#111111",
+    "banner_link_color": "#777777",
+    "footer_background_color": "#ffffff",
+    "footer_color": "#666666",
+    "heading_color": "#333333",
+    "section_title_color": "#555555",
+    "highlight_color": "ce3834",
+    "star_color": "#f6c61f",
+    "error_color": "#ff2828",
+    "promo_color": "#cee9f5",
+    "default_image": "/assets/img/no-image.svg",
+    "navigation_text_transform": "uppercase",
+    "mosaic_text_color": "#ffffff",
+    "mosaic_button_text": "#ffffff",
+    "mosaic_button_background": "#666666",
+    "show_quickshop": true,
+    "brands_images": false,
+    "brands_footer": true,
+    "brands_cap": 5,
+    "product_count": 12,
+    "theme_credits": true,
+    "show_copyright": true,
+    "sitemap": true,
+    "move_social_icons": false,
+    "payment_visa": true,
+    "payment_mastercard": true,
+    "payment_american_express": true,
+    "payment_discover": false,
+    "payment_paypal": true,
+    "payment_apple_pay": true,
+    "show_pages": true,
+    "category_display": "show_categories_meganav",
+    "homepage_featured_products_limit": 8,
+    "homepage_new_products_limit": 4,
+    "homepage_show_blog": true,
+    "homepage_blog_article_limit": 2,
+    "product_review_count": 4,
+    "product_purchase_disable_ajax": false,
+    "show_product_details": true,
+    "apple_pay_style": "white-border",
+    "product_image_aspect_ratio": "default-ratio",
+    "price_as_low_as": false,
+    "show_home_link": false,
+    "show_categories": true,
+    "product_sale_badges": false,
+    "_images": {
+      "account-product-thumbnail": {
+        "width": 440,
+        "height": 600
+      },
+      "account-logo": {
+        "width": 200,
+        "height": 200
+      },
+      "core-picklist-thumb": {
+        "width": 80,
+        "height": 200
+      },
+      "core-product-picklist": {
+        "width": 80,
+        "height": 200
+      },
+      "core-blog-thumbnail": {
+        "width": 800,
+        "height": 800
+      },
+      "thumbnail": {
+        "width": 80,
+        "height": 40
+      },
+      "small": {
+        "width": 300,
+        "height": 300
+      },
+      "gallery": {
+        "width": 650,
+        "height": 650
+      },
+      "medium": {
+        "width": 900,
+        "height": 900
+      },
+      "large": {
+        "width": 1280,
+        "height": 1280
+      }
+    }
+  },
+  "variations": [
+    {
+      "name": "Bright",
+      "id": "bright",
+      "meta": {
+        "desktop_screenshot": "capacity-bright.png",
+        "mobile_screenshot": "capacity-bright-mobile.png",
+        "description": "Capacity sets a new standard for ecommerce navigation and search functionality. With its customizable mega-navigation, robust product filtering, and unique modular slideshow area, Capacity is powerful enough to handle the largest inventories—and look good doing it.",
+        "demo_url": "http://capacity-bright-demo.mybigcommerce.com/",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile",
+          "video_games"
+        ],
+        "industries": [
+          "toys_games"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Lato_400,700",
+        "secondary-font": "Google_Lato_400,700",
+        "body_color": "#75808E",
+        "header_color": "#5770ff",
+        "primary_color": "#4b37a8",
+        "primary_button_background_color": "#8dc246",
+        "navigation_color": "#ffffff",
+        "accent_color": "#5e73ea",
+        "page_background_color": "#2B315C",
+        "banner_background_color": "#3e56dc",
+        "banner_link_color": "#5e73ea",
+        "footer_background_color": "#ffffff",
+        "heading_color": "#4f5965",
+        "section_title_color": "#4f5965",
+        "meta_color": "#ce3834",
+        "error_color": "#ff2828"
+      }
+    },
+    {
+      "name": "Clean",
+      "id": "clean",
+      "meta": {
+        "desktop_screenshot": "capacity-clean.png",
+        "mobile_screenshot": "capacity-clean-mobile.png",
+        "description": "Capacity sets a new standard for ecommerce navigation and search functionality. With its customizable mega-navigation, robust product filtering, and unique modular slideshow area, Capacity is powerful enough to handle the largest inventories—and look good doing it.",
+        "demo_url": "http://capacity-clean-demo.mybigcommerce.com/",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile",
+          "cosmetics"
+        ],
+        "industries": [
+          "health_beauty"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Tenor+Sans_400",
+        "secondary-font": "Google_Cardo_400,700",
+        "body_color": "#8c7c7c",
+        "header_color": "#ffffff",
+        "primary_color": "#a77f76",
+        "primary_button_background_color": "#a08c8c",
+        "navigation_color": "#a08c8c",
+        "accent_color": "#675d5d",
+        "page_background_color": "#ede7e5",
+        "banner_background_color": "#b69e9e",
+        "banner_link_color": "#675d5d",
+        "footer_background_color": "#ffffff",
+        "footer_color": "#8c7c7c",
+        "heading_color": "#675d5d",
+        "section_title_color": "#675d5d",
+        "error_color": "#ff2828"
+      }
+    },
+    {
+      "name": "Cool",
+      "id": "cool",
+      "meta": {
+        "desktop_screenshot": "capacity-cool.png",
+        "mobile_screenshot": "capacity-cool-mobile.png",
+        "description": "Capacity sets a new standard for ecommerce navigation and search functionality. With its customizable mega-navigation, robust product filtering, and unique modular slideshow area, Capacity is powerful enough to handle the largest inventories—and look good doing it.",
+        "demo_url": "http://capacity-cool-demo.mybigcommerce.com/",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile",
+          "music"
+        ],
+        "industries": [
+          "electronics_computers"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Rubik_400,500",
+        "secondary-font": "Google_Rubik_400,500",
+        "body_color": "#555555",
+        "header_color": "#f9f9f9",
+        "primary_color": "#4b37a8",
+        "primary_button_background_color": "#4b37a8",
+        "navigation_color": "#4b37a8",
+        "accent_color": "#4b37a8",
+        "banner_link_color": "#4b37a8",
+        "footer_background_color": "#130c31",
+        "footer_color": "#ffffff",
+        "heading_color": "#333333",
+        "section_title_color": "#555555",
+        "error_color": "#ff2828",
+        "site_background_image": "/assets/img/capacity-bg.jpg"
+      }
+    },
+    {
+      "name": "Warm",
+      "id": "warm",
+      "meta": {
+        "desktop_screenshot": "capacity-warm.png",
+        "mobile_screenshot": "capacity-warm-mobile.png",
+        "description": "Capacity sets a new standard for ecommerce navigation and search functionality. With its customizable mega-navigation, robust product filtering, and unique modular slideshow area, Capacity is powerful enough to handle the largest inventories—and look good doing it.",
+        "demo_url": "http://capacity-warm-demo.mybigcommerce.com/",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile",
+          "clothing"
+        ],
+        "industries": [
+          "gifts_specialty"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Karla_400,700",
+        "secondary-font": "Google_PT+Serif_400,700",
+        "body_color": "#666666",
+        "header_color": "#ffffff",
+        "primary_color": "#000000",
+        "primary_button_background_color": "#000000",
+        "navigation_color": "#222222",
+        "accent_color": "#222222",
+        "banner_link_color": "666666",
+        "page_background_color": "#edece8",
+        "footer_background_color": "#ffffff",
+        "footer_color": "#000000",
+        "heading_color": "#333333",
+        "section_title_color": "#333333",
+        "error_color": "#ff2828"
+      }
+    }
+  ]
+}

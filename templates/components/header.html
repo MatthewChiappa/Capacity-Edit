@@ -1,0 +1,20 @@
+
+<header class="main-header" role="banner">
+
+  <div class="primary-navigation">
+    {{> components/navigation-toggle}}
+    {{> components/search-form}}
+    {{> components/navigation}}
+
+    <div class="header-tools">
+      {{> components/currency-selector}}
+      {{> components/customer-links}}
+      {{> components/cart/cart-preview-link}}
+    </div>
+  </div>
+
+  <div class="branding">
+    {{> components/branding location="header"}}
+  </div>
+
+</header>

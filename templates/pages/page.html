@@ -1,0 +1,25 @@
+{{#partial "page"}}
+
+<div class="content">
+  <article class="page-container rte">
+    <h1 class="page-heading">{{page.title}}</h1>
+    <div class="page-content">
+      {{{page.content}}}
+    </div>
+
+    {{#if page.feed}}
+      <ul class="rss-feed">
+        {{#each page.feed}}
+          <li class="rss-feed-item">
+            <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+            <p>{{{content}}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </article>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

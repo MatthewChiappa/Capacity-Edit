@@ -1,5 +1,12 @@
 {{#if brand.products}}
-  <div class="collection-product-listing {{#if brand.faceted_search_enabled}}with-sidebar{{/if}}">
+  <div
+    class="collection-product-listing
+    {{#if brand.faceted_search_enabled}}
+      {{#unless theme_settings.hide_sidebar}}
+        with-sidebar
+      {{/unless}}
+    {{/if}}"
+  >
     <form action="/compare" method="POST" class="form {{#if brand.show_compare}}compare-enabled{{/if}}" data-product-compare>
       <div class="product-grid {{#if brand.faceted_search_enabled}}grid-l-3{{/if}} grid-m-2">
         {{#each brand.products}}

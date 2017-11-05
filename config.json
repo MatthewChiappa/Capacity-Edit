@@ -1,6 +1,6 @@
 {
-  "name": "Capacity - Editing",
-  "version": "1.12.2",
+  "name": "Capacity",
+  "version": "1.14.7",
   "css_compiler": "scss",
   "autoprefixer_cascade": true,
   "autoprefixer_browsers": [
@@ -8,16 +8,17 @@
   ],
   "meta": {
     "price": 17000,
-    "documentation_url": "https://www.pixelunion.net/support/capacity-theme-manual/",
+    "documentation_url": "http://support.pixelunion.net/category/174-capacity",
     "author_name": "Pixel Union",
     "author_email": "support@pixelunion.net",
-    "author_support_url": "https://www.pixelunion.net/support/",
+    "author_support_url": "http://support.pixelunion.net/",
     "composed_image": "capacity-composed.png",
     "features": [
       "fully_responsive",
       "mega_navigation",
       "masonry_design",
       "quick_add_to_cart",
+      "customized_checkout",
       "switchable_product_view",
       "product_comparison_table",
       "complex_search_filtering",
@@ -74,6 +75,7 @@
     "mosaic_text_color": "#ffffff",
     "mosaic_button_text": "#ffffff",
     "mosaic_button_background": "#666666",
+    "hide_sidebar": false,
     "show_quickshop": true,
     "brands_images": false,
     "brands_footer": true,
@@ -90,7 +92,7 @@
     "payment_paypal": true,
     "payment_apple_pay": true,
     "show_pages": true,
-    "category_display": "show_categories_meganav",
+    "category_display": "show_categories_meganav_large",
     "homepage_featured_products_limit": 8,
     "homepage_new_products_limit": 4,
     "homepage_show_blog": true,
@@ -104,6 +106,10 @@
     "show_home_link": false,
     "show_categories": true,
     "product_sale_badges": false,
+    "carousel_style": "mosaic",
+    "slideshow-aspect-ratio": "",
+    "categories-all-link": true,
+    "slideshow_autoplay": true,
     "_images": {
       "account-product-thumbnail": {
         "width": 440,
@@ -144,8 +150,50 @@
       "large": {
         "width": 1280,
         "height": 1280
+      },
+      "zoom": {
+        "width": 2048,
+        "height": 2048
       }
-    }
+    },
+    "optimizedCheckout-header-backgroundColor": "#f7f7f7",
+    "optimizedCheckout-show-backgroundImage": false,
+    "optimizedCheckout-backgroundImage": "",
+    "optimizedCheckout-backgroundImage-size": "1000x400",
+    "optimizedCheckout-show-logo": "none",
+    "optimizedCheckout-logo": "",
+    "optimizedCheckout-logo-size": "250x100",
+    "optimizedCheckout-logo-position": "left",
+    "optimizedCheckout-headingPrimary-color": "#2d2d2d",
+    "optimizedCheckout-headingPrimary-font": "Google_Montserrat_400",
+    "optimizedCheckout-headingSecondary-color": "#2d2d2d",
+    "optimizedCheckout-headingSecondary-font": "Google_Montserrat_400",
+    "optimizedCheckout-body-backgroundColor": "#ffffff",
+    "optimizedCheckout-contentPrimary-color": "#4f4f4f",
+    "optimizedCheckout-contentPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-contentSecondary-color": "#989898",
+    "optimizedCheckout-contentSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-color": "#ffffff",
+    "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+    "optimizedCheckout-buttonPrimary-backgroundColor": "#454545",
+    "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+    "optimizedCheckout-buttonPrimary-borderColor": "#454545",
+    "optimizedCheckout-buttonPrimary-borderColorHover": "#666666",
+    "optimizedCheckout-buttonSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonSecondary-color": "#4f4f4f",
+    "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+    "optimizedCheckout-buttonSecondary-borderColor": "#dfdfdf",
+    "optimizedCheckout-link-color": "#4496f6",
+    "optimizedCheckout-link-font": "Google_Karla_400",
+    "optimizedCheckout-discountBanner-backgroundColor": "#f5f5f5",
+    "optimizedCheckout-discountBanner-textColor": "#333333",
+    "optimizedCheckout-discountBanner-iconColor": "#333333",
+    "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+    "optimizedCheckout-step-backgroundColor": "#4f4f4f",
+    "optimizedCheckout-step-textColor": "#ffffff",
+    "optimizedCheckout-formField-backgroundColor": "white",
+    "optimizedCheckout-formField-borderColor": "#989898"
   },
   "variations": [
     {
@@ -213,110 +261,21 @@
       },
       "settings": {
         "primary-font": "Google_Tenor+Sans_400",
-        "secondary-font": "Google_Lato_400,700",
-        "main_navigation_font": "primary",
-        "footer_navigation_font": "primary",
-        "price_font": "secondary",
-        "button_font": "primary",
-        "body_color": "#555656",
+        "secondary-font": "Google_Cardo_400,700",
+        "body_color": "#8c7c7c",
         "header_color": "#ffffff",
         "primary_color": "#a77f76",
         "primary_button_background_color": "#a08c8c",
-        "navigation_color": "#555656",
-        "accent_color": "#0f0f0f",
-        "border_color": "#f7f6f6",
-        "input_color": "#555656",
-        "input_background_color": "#ffffff",
-        "input_border_color": "#020202",
-        "select_border_color": "#e6e6e6",
-        "page_background_color": "#e9eaef",
-        "banner_background_color": "#555656",
-        "banner_link_color": "#7b7c7c",
+        "navigation_color": "#a08c8c",
+        "accent_color": "#675d5d",
+        "page_background_color": "#ede7e5",
+        "banner_background_color": "#b69e9e",
+        "banner_link_color": "#675d5d",
         "footer_background_color": "#ffffff",
-        "footer_color": "#555656",
-        "heading_color": "#7b7c7c",
-        "section_title_color": "#7b7c7c",
-        "highlight_color": "ce3834",
-        "star_color": "#f6c61f",
-        "error_color": "#c13131",
-        "promo_color": "#555656",
-        "default_image": "/assets/img/no-image.svg",
-        "navigation_text_transform": "uppercase",
-        "mosaic_text_color": "#ffffff",
-        "mosaic_button_text": "#ffffff",
-        "mosaic_button_background": "#555656",
-        "show_quickshop": true,
-        "brands_images": false,
-        "brands_footer": true,
-        "brands_cap": 5,
-        "product_count": 12,
-        "theme_credits": true,
-        "show_copyright": true,
-        "sitemap": true,
-        "move_social_icons": false,
-        "payment_visa": true,
-        "payment_mastercard": true,
-        "payment_american_express": true,
-        "payment_discover": true,
-        "payment_paypal": true,
-        "payment_apple_pay": true,
-        "show_pages": true,
-        "category_display": "show_categories_meganav",
-        "homepage_featured_products_limit": 8,
-        "homepage_new_products_limit": 4,
-        "homepage_show_blog": true,
-        "homepage_blog_article_limit": 2,
-        "product_review_count": 4,
-        "product_purchase_disable_ajax": false,
-        "show_product_details": true,
-        "apple_pay_style": "white-border",
-        "product_image_aspect_ratio": "four-by-five",
-        "price_as_low_as": false,
-        "show_home_link": false,
-        "show_categories": true,
-        "product_sale_badges": false,
-        "_images": {
-          "account-product-thumbnail": {
-            "width": 440,
-            "height": 600
-          },
-          "account-logo": {
-            "width": 200,
-            "height": 200
-          },
-          "core-picklist-thumb": {
-            "width": 80,
-            "height": 200
-          },
-          "core-product-picklist": {
-            "width": 80,
-            "height": 200
-          },
-          "core-blog-thumbnail": {
-            "width": 800,
-            "height": 800
-          },
-          "thumbnail": {
-            "width": 80,
-            "height": 40
-          },
-          "small": {
-            "width": 300,
-            "height": 300
-          },
-          "gallery": {
-            "width": 650,
-            "height": 650
-          },
-          "medium": {
-            "width": 900,
-            "height": 900
-          },
-          "large": {
-            "width": 1280,
-            "height": 1280
-          }
-        }
+        "footer_color": "#8c7c7c",
+        "heading_color": "#675d5d",
+        "section_title_color": "#675d5d",
+        "error_color": "#ff2828"
       }
     },
     {

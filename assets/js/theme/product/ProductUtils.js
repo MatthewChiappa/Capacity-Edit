@@ -299,7 +299,10 @@ export default class ProductUtils {
       message = response;
     } else {
       message = this.context.addSuccess;
-      message = message.replace('*product*', this.$el.find('[data-product-details]')
+      message = message
+        .replace('*cart_link*', `<a href=${this.context.urlsCart}>${this.context.cartLink}</a>`)
+        .replace('*checkout_link*', `<a href=${this.context.urlsCheckout}>${this.context.checkoutLink}</a>`)
+        .replace('*product*', this.$el.find('[data-product-details]')
         .addBack('.product-details')
         .data('product-title'));
     }

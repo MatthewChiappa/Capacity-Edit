@@ -3,7 +3,7 @@
 
     {{#if previous}}
       <li class="pagination-previous">
-        <a class="pagination-link" href="{{previous}}" data-faceted-search-facet>
+        <a class="pagination-link" href="{{previous}}">
           {{lang 'core.pagination.previous'}}
           <span class="pagination-page">{{lang 'core.pagination.page'}}</span>
         </a>
@@ -17,7 +17,7 @@
       {{#each links}}
         <li class="pagination-item">
           {{#if ../current "!==" number}}
-            <a class="pagination-link" href="{{url}}" data-faceted-search-facet>{{number}}</a>
+            <a class="pagination-link" href="{{url}}">{{number}}</a>
           {{else}}
             <span class="pagination-current">{{number}}</span>
           {{/if}}
@@ -27,7 +27,7 @@
 
     {{#if next}}
       <li class="pagination-next">
-        <a class="pagination-link" href="{{next}}" data-faceted-search-facet>
+        <a class="pagination-link" href="{{next}}">
           {{lang 'core.pagination.next'}}
           <span class="pagination-page">{{lang 'core.pagination.page'}}</span>
         </a>

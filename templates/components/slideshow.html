@@ -1,0 +1,26 @@
+{{inject 'carouselDelay' carousel.swap_frequency}}
+
+<section class="slideshow slideshow-count-{{carousel.slides.length}} {{theme_settings.slideshow-aspect-ratio}}" data-slideshow>
+  {{#each carousel.slides}}
+    <figure class="slideshow-item slideshow-item-{{@index}}" data-slideshow-slide style="background-image: url('{{image}}');">
+      <figcaption class="slideshow-item-info">
+        {{#if heading}}
+          <h2 class="slideshow-item-heading">{{{heading}}}</h2>
+        {{/if}}
+        {{#if text}}
+          <p class="slideshow-item-caption">{{{text}}}</p>
+        {{/if}}
+        {{#if url}}
+          {{#if button_text}}
+            <span class="button slideshow-button" href="{{{url}}}">{{button_text}}</span>
+          {{/if}}
+        {{/if}}
+      </figcaption>
+      {{#if url}}
+        <a class="slideshow-item-link" href="{{{url}}}"></a>
+      {{/if}}
+
+      <img class="slideshow-item-image" src="{{image}}">
+    </figure>
+  {{/each}}
+</section>

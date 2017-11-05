@@ -1,9 +1,11 @@
 {{#if children}}
   <a href="#" class="submenu-trigger" data-submenu-trigger>{{name}}</a>
   <ul class="dropdown nav-submenu">
-    <li class="nav-submenu-item">
-      <a href="{{url}}">{{lang 'common.all_text'}} {{name}}</a>
-    </li>
+    {{#if show_all}}
+      <li class="nav-submenu-item">
+        <a href="{{url}}">{{lang 'common.all_text'}} {{name}}</a>
+      </li>
+    {{/if}}
     {{#each children}}
       <li class="nav-submenu-item">
         {{> components/navigation-item}}

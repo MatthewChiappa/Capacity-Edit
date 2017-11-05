@@ -25,7 +25,7 @@ export default class Navigation {
     this.isMegaNavLarge = !!$('[data-menu-meganav-large]').length;
     this.siteWidth = '';
     this.mobileWidth = 992;
-    this.windowWidth = $(window).width();
+    this.windowWidth = 0;
     this.$primaryNavigation = $('.primary-navigation');
 
     if (this.isMegaNav) {this.megaNav = new MegaNav();}

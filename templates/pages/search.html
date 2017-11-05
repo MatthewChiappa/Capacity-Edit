@@ -10,11 +10,13 @@ product_results:
 
     <h1 class="page-heading">{{lang 'search.results' term=forms.search.query total=product_results.pagination.total}}</h1>
 
-    {{#if result_count ">" 0}}
-      <aside class="collection-sidebar" data-collection-sidebar data-search-sidebar>
-        {{> components/search/sidebar}}
-      </aside>
-    {{/if}}
+    {{#unless theme_settings.hide_sidebar}}
+      {{#if result_count ">" 0}}
+        <aside class="collection-sidebar" data-collection-sidebar data-search-sidebar>
+          {{> components/search/sidebar}}
+        </aside>
+      {{/if}}
+    {{/unless}}
 
     <section data-search>
       {{{snippet 'search'}}}

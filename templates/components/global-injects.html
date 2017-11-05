@@ -27,9 +27,14 @@
 {{inject 'outOfStock' (lang 'product.error_message_stock')}}
 {{inject 'preOrder' (lang 'product.pre_order')}}
 {{inject 'soldOut' (lang 'product.sold_out')}}
+{{inject 'cartLink' (lang 'product.cart_link')}}
+{{inject 'checkoutLink' (lang 'product.checkout_link')}}
 
 {{inject 'urlsCart' urls.cart}}
 {{inject 'urlsCheckout' urls.checkout.single_address}}
 {{inject 'disableProductAjax' theme_settings.product_purchase_disable_ajax}}
 
 {{inject 'productsPerPage' theme_settings.product_count}}
+
+{{!-- home --}}
+{{inject 'slideshowAutoplay' theme_settings.slideshow_autoplay}}

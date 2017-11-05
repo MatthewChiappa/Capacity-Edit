@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import ProductViewTemplates from './ProductViewTemplates';
 import ProductImageSwitcher from './ProductImageSwitcher';
+import baguetteBox from 'baguettebox.js';
 import imagesLoaded from 'imagesloaded';
 
 export default function variationImgPreview(main, thumb, alt) {
@@ -24,7 +25,9 @@ export default function variationImgPreview(main, thumb, alt) {
 
   // Set main image and add active class to matching thumbnail
   if (! $(`img[src="${main}"]`).length) {
+
     $('.product-main-image img').attr('src', main).attr('alt', alt);
+    $('.product-main-image .product-image').attr('href', main);
     // Todo: make it so ProductImageSwitcher only needs to fire once
     new ProductImageSwitcher(productImages);
   }

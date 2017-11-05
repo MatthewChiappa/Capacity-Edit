@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import baguetteBox from 'baguettebox.js';
 
 export default class ProductImageSwitcher {
   constructor(el) {
@@ -17,7 +18,7 @@ export default class ProductImageSwitcher {
   }
 
   _setInitialImage() {
-    const initialImageSrc = this.$el.find('.product-image').attr('src').split('/').pop();
+    const initialImageSrc = this.$el.find('.product-image img').attr('src').split('/').pop();
 
     $('.product-thumbnail').each((i) => {
       const $thumbnail = $('.product-thumbnail').eq(i);
@@ -29,17 +30,24 @@ export default class ProductImageSwitcher {
           .siblings().removeClass('active');
       }
     });
+    baguetteBox.run('.product-main-image', {});
   }
 
   _switchMainImage(event) {
+    baguetteBox.destroy();
     const $target = $(event.currentTarget);
     const largeImage = $target.data('high-res');
+    const imageDescription = $target.find('img').attr('title');
 
     $target
       .addClass('active')
       .siblings().removeClass('active');
 
     this.$el.find('.product-main-image img').attr('src', largeImage);
+    this.$el.find('.product-main-image img').attr('alt', imageDescription);
+    this.$el.find('.product-main-image img').attr('title', imageDescription);
+    this.$el.find('.product-main-image .product-image').attr('href', largeImage);
+    baguetteBox.run('.product-main-image', {});
   }
 
   _cacheImages() {

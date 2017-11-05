@@ -1,9 +1,7 @@
-{{#if this}}
-  <div class="banners">
-    {{#each this}}
-      <div class="banner rte">
-        {{{this}}}
-      </div>
-    {{/each}}
+{{#if banners}}
+  <div class="banners {{class}}">
+    <div class="banner rte">
+      {{{limit banners 1}}}
+    </div>
   </div>
 {{/if}}

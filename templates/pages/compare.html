@@ -23,7 +23,7 @@
                 {{call_for_price}}
               {{/if}}
               {{#if price}}
-                {{> components/product/price price=price show_savings=false schema_org=false ../theme_settings.price_as_low_as}}
+                {{> components/product/price price=price show_savings=false schema_org=false price_as_low_as=../theme_settings.price_as_low_as}}
               {{/if}}
             </div>
           </td>

@@ -21,16 +21,34 @@ shop_by_brand:
     {{/if}}
     <h1 class="page-heading">{{category.name}}</h1>
 
+    {{#unless theme_settings.hide_sidebar}}
+      {{#if category.products.length ">" 0}}
+        <a class="sidebar-toggle" data-filter-sidebar-toggle href>Show Filters</a>
+        <a class="sidebar-toggle hide-sidebar-toggle" data-filter-sidebar-toggle href>Hide Filters</a>
+      {{/if}}
+    {{/unless}}
+
     {{{snippet 'categories'}}}
 
-    {{#if category.products.length ">" 0}}
-      <aside class="collection-sidebar" data-collection-sidebar data-category-sidebar>
-        {{> components/category/sidebar}}
-      </aside>
-    {{/if}}
+    {{#unless theme_settings.hide_sidebar}}
+      {{#if category.products.length ">" 0}}
+        <aside class="collection-sidebar hide-sidebar" data-collection-sidebar data-category-sidebar>
+          {{> components/category/sidebar}}
+        </aside>
+      {{/if}}
+    {{/unless}}
 
     <section data-category>
-      <div class="category-description {{#if category.products}}with-sidebar{{/if}}">{{{category.description}}}</div>
+      <div
+        class="category-description
+        {{#if category.products}}
+          {{#unless theme_settings.hide_sidebar}}
+            with-sidebar
+          {{/unless}}
+        {{/if}}"
+      >
+        {{{category.description}}}
+      </div>
       {{> components/category/product-listing}}
     </section>
 
